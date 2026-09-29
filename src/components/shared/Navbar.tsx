@@ -1,23 +1,27 @@
 import Image from "next/image";
 import logo from "@/assets/book.ico";
+import Link from "next/link";
 
 const Navbar = () => {
   return (
     <nav className="bg-base-100 shadow-sm">
       <div className="container mx-auto navbar">
         <div className="navbar-start">
-          <div className="flex gap-4 text-xl">
+          <Link href={'/'} className="flex gap-4 text-xl">
             <Image src={logo} alt="Book Vibe" width={30} />{" "}
             <h2 className="text-2xl font-bold">Book Vibe</h2>
-          </div>
+          </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
             <li>
-              <a className="btn btn-outline btn-success">Home</a>
+              <Link href={'/'} className="btn btn-outline btn-success">Home</Link>
             </li>
             <li>
-              <a>Listed Books</a>
+              <Link href={'/books'}>Books</Link>
+            </li>
+            <li>
+              <Link href={'/listed-books'}>Listed Books</Link>
             </li>
             <li>
               <a>Pages to Read</a>

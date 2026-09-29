@@ -1,8 +1,9 @@
 import { IBook } from "@/types/books.type";
 import Image from "next/image";
+import Link from "next/link";
 
 interface IBookCardProps {
-    book: IBook
+  book: IBook;
 }
 
 const BookCard = ({ book }: IBookCardProps) => {
@@ -40,7 +41,11 @@ const BookCard = ({ book }: IBookCardProps) => {
       <p className="mt-3 text-[15px] text-gray-600">
         By : <span>{book.author}</span>
       </p>
-      <button className="btn bg-[#12c20b] w-full mt-3 text-white">View Details</button>
+      <Link href={`/books/${book.bookId}`}>
+        <button className="btn bg-[#12c20b] w-full mt-3 text-white">
+          View Details
+        </button>
+      </Link>
 
       {/* Bottom Info */}
       <div className="mt-5 flex items-center justify-between border-t border-dashed border-gray-300 pt-5">
